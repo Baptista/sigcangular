@@ -1,0 +1,25 @@
+::ng-deep .mat-expansion-panel-header {
+    padding: 0 16px !important;
+}
+
+::ng-deep .mat-nav-list .mat-icon {
+    margin-right: 10px;
+    color: green;
+}
+
+
+
+::ng-deep .mat-expansion-panel-header {
+    height: 48px !important;
+}
+
+
+
+::ng-deep .mat-nav-list .is-active {
+
+    
+    border-left-color: white;
+    width           : calc(100% - 8px)!important;
+}
+
+ 

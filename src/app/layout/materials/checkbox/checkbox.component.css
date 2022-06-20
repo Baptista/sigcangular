@@ -1,0 +1,10 @@
+.form-check-input{
+    
+    cursor: pointer;
+    font-size: 110%;
+  }
+
+  ::ng-deep.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: green !important;
+ }
+

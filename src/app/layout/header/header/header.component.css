@@ -1,0 +1,63 @@
+.sidebar-container {
+    display       : flex;
+    flex-direction: column;
+    position      : absolute;
+    top           : 0;
+    bottom        : 0;
+    left          : 0;
+    right         : 0;
+  }
+  .mat-toolbar{
+    background-color: green;
+  }
+  .button-icon-menu{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  .sidebar-is-mobile .sidebar-toolbar {
+    position: fixed;
+    z-index : 2;
+  }
+  
+  .sidebar-container .button-icon-menu {
+     background-color: green;
+     color: white;
+  }
+  .loader-container
+  {
+     height:3px
+  }
+  
+  h1.sidebar-app-name {
+    margin-left     : 8px;
+    width           : 185px;   
+  }
+  
+  .sidebar-sidenav-container {
+    flex            : 1;
+    background-color: rgb(223, 222, 222) !important;
+  }
+  
+  .sidebar-is-mobile .sidebar-sidenav-container {
+    flex: 1 0 auto;  
+  }
+  
+  .mat-drawer {
+    width: 250px;
+  }
+  
+  .router-container {
+    padding: 5px 20px;
+  }
+
+
+ 
+
+  .userImage{    
+    width: 10%;
+    float: right;
+    height: 100%;
+    cursor: pointer;
+  }

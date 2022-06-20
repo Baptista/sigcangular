@@ -1,0 +1,26 @@
+.divbox{
+    box-sizing: border-box;
+    
+}
+
+.divcolumn{
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: 100%;
+    min-height: 100px;
+}
+.mat-form-field{
+    display: block;
+}
+
+
+
+.form-check-label{
+    font-size: 110%;
+}
+
+
+
+
+

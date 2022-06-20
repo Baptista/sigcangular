@@ -1,0 +1,11 @@
+.divflex{
+    display: flex;
+    margin: 5px;
+}
+
+@media screen and (max-width: 1020px) {
+    .divflex{  display:inline-block;
+               vertical-align:middle;
+            }
+    
+}

@@ -1,0 +1,14 @@
+<div [formGroup]="form">
+<mat-form-field appearance="fill" class="matformfielddisplay"  >
+    <mat-label [attr.for]="input.id">{{input.label}}</mat-label>
+    <input matInput class="form-control" [id]="input.id" [type]="input.type" [formControlName]="input.id"  >
+    </mat-form-field>
+
+    <div *ngIf="f[input.id]?.hasError('required')" class="alert alert-danger">
+        required.            
+      </div>
+      <div *ngIf="f[input.id]?.hasError('minlength')" class="alert alert-danger">
+        minlength
+      </div>
+</div>
+
