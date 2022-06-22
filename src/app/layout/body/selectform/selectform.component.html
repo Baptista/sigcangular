@@ -5,28 +5,19 @@
 
       <div *ngSwitchCase="'textbox'" class="divcolumn">
          <app-textbox [input]="input" [form]="form"></app-textbox>
-      </div>
-       
+      </div>       
 
       <div *ngSwitchCase="'checkbox'" class="divcolumn">
-        <!--<app-checkbox [input]="input"></app-checkbox>-->
-        <div class="form-check">
-          <mat-checkbox class="form-check-input" value="after" [formControlName]="input.id">{{input.label}}</mat-checkbox>
-        </div>
+         <app-checkbox [input]="input" [form]="form"></app-checkbox>         
       </div>      
 
       <div *ngSwitchCase="'datepicker'" class="divcolumn">
-       <!-- <app-datepicker [input]="input"></app-datepicker> -->
-       <mat-form-field appearance="fill" >
-        <mat-label>{{input.label}}</mat-label>
-        <input matInput [matDatepicker]="picker" [id]="input.id" [formControlName]="input.id">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+       <app-datepicker [input]="input" [form]="form"></app-datepicker>       
       </div>
 
       <div *ngSwitchCase="'select'" class="divcolumn">
-       <!-- <app-select [input]="input"></app-select> -->
+       <app-select [input]="input" [form]="form"></app-select>
+       <!--
        <mat-form-field appearance="fill">
         <mat-label>{{input.label}}</mat-label>
         <mat-select [formControlName]="input.id">
@@ -35,6 +26,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+      -->
       </div>
 
     </container-element>

@@ -7,8 +7,8 @@
     left          : 0;
     right         : 0;
   }
-  .mat-toolbar{
-    background-color: green;
+  ::ng-deep .mat-toolbar{
+    background-color: #429845;
   }
   .button-icon-menu{
     cursor: pointer;
@@ -22,7 +22,7 @@
   }
   
   .sidebar-container .button-icon-menu {
-     background-color: green;
+     background-color: #429845;
      color: white;
   }
   .loader-container
@@ -60,4 +60,10 @@
     float: right;
     height: 100%;
     cursor: pointer;
+  }
+
+
+  ::ng-deep .h2{
+    color: #ffffff;
+    
   }

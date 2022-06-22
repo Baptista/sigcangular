@@ -17,7 +17,7 @@ import { ResultsconsultComponent } from './body/consult/resultsconsult/resultsco
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import { MatTableModule } from '@angular/material/table';
 import { SelectformComponent } from './body/selectform/selectform.component'  
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { GroupformComponent } from './body/groupform/groupform.component';
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
 import { MatRadioModule } from '@angular/material/radio';
@@ -60,7 +60,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatInputModule,
     MatPaginatorModule,
     MatTableModule,
-    FormsModule,
     ReactiveFormsModule,
     MatCheckboxModule,
     MatRadioModule,
@@ -68,7 +67,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatNativeDateModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   exports:[
     NavbarComponent,
@@ -76,7 +75,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     UserinfoComponent,
     HeaderConsultComponent,
     GroupformComponent,
-    SelectformComponent
+    SelectformComponent,
+    DialogComponent
   ],
   providers:[
     { provide: MAT_DATE_LOCALE, useValue: 'pt-PT' }

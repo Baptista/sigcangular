@@ -20,20 +20,13 @@ export class GroupformComponent {
     { type: 'checkbox', label: 'Name3', id:'id3', options:[]}
    
   ];
-  /*
-  formc: FormControl = new FormControl(this.formFields);
-  
-  form: FormGroup = new FormGroup({
-    first:new FormControl(this.formFields)
-  });
-*/
-
+ 
   form: FormGroup = new FormGroup( {   
-    id:new FormControl({ type: 'textbox', label: 'Name', id:'id', options:[]},[Validators.required , Validators.minLength(4)]), 
-    id2:new FormControl({ type: 'textbox', label: 'Name2', id:'id2', options:[]},Validators.required),
-    id3:new FormControl(''),
-    id4:new FormControl(''),
-    id5:new FormControl('')
+    id:new FormControl('',[Validators.required , Validators.minLength(4)]), 
+    id2:new FormControl('',Validators.required),
+    id3:new FormControl(),
+    id4:new FormControl(),
+    id5:new FormControl()
   } );
 
   constructor(public dialog: MatDialog) {}
