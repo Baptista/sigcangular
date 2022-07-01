@@ -5,3 +5,8 @@ export interface IFormField {
     options: string[];
 }
 
+export interface IPanelFormField{
+    label:string;
+    fields: IFormField[];
+}
+

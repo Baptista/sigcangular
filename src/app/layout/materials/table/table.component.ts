@@ -3,11 +3,11 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
-  selector: 'app-resultsconsult',
-  templateUrl: './resultsconsult.component.html',
-  styleUrls: ['./resultsconsult.component.css']
+  selector: 'app-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.css']
 })
-export class ResultsconsultComponent implements AfterViewInit {
+export class TableComponent implements AfterViewInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);

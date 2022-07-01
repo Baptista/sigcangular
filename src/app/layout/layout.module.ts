@@ -13,7 +13,7 @@ import { UserinfoComponent } from './header/userinfo/userinfo.component';
 import { HeaderConsultComponent } from './body/consult/header/headerconsult.component';
 import { SearchconsultComponent } from './body/consult/searchconsult/searchconsult.component';
 import {MatInputModule} from '@angular/material/input';
-import { ResultsconsultComponent } from './body/consult/resultsconsult/resultsconsult.component'; 
+import { TableComponent } from './materials/table/table.component'; 
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import { MatTableModule } from '@angular/material/table';
 import { SelectformComponent } from './body/selectform/selectform.component'  
@@ -31,6 +31,8 @@ import { DatepickerComponent } from './materials/datepicker/datepicker.component
 import { SelectComponent } from './materials/select/select.component';
 import { DialogComponent } from './materials/dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PanelformComponent } from './body/create/panelform/panelform.component';
+import { CreateformComponent } from './body/create/createform/createform.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     UserinfoComponent,
     HeaderConsultComponent,
     SearchconsultComponent,
-    ResultsconsultComponent,
+    TableComponent,
     SelectformComponent,
     GroupformComponent,
     TextboxComponent,
@@ -47,6 +49,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     DatepickerComponent,
     SelectComponent,
     DialogComponent,
+    PanelformComponent,
+    CreateformComponent,
   ],
   imports: [
     CommonModule,    
