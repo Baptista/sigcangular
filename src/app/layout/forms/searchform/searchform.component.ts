@@ -5,11 +5,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../materials/dialog/dialog.component';
 
 @Component({
-  selector: 'app-groupform',
-  templateUrl: './groupform.component.html',
-  styleUrls: ['./groupform.component.css']
+  selector: 'app-searchform',
+  templateUrl: './searchform.component.html',
+  styleUrls: ['./searchform.component.css']
 })
-export class GroupformComponent {
+export class SearchFormComponent {
 
   @Input() formFields:Array<IFormField> = [
  

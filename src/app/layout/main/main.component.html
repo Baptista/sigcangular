@@ -16,11 +16,15 @@
         <app-navbar>          
         </app-navbar>       
       </mat-sidenav>      
+     <div style="margin: 20px">
+     
       <app-headerconsult></app-headerconsult> 
-      <app-searchconsult></app-searchconsult>  
-      <app-table></app-table>  
       
+      <app-searchconsult label="Pesquisa"></app-searchconsult>   
+      <app-table></app-table>  
+        <!--<app-createform title="Create..."></app-createform>-->
+      </div>
     </mat-sidenav-container>
   </div>
-  <app-userinfo *ngIf="toDisplay"></app-userinfo>
+
   

@@ -16,17 +16,7 @@
       </div>
 
       <div *ngSwitchCase="'select'" class="divcolumn">
-       <app-select [input]="input" [form]="form"></app-select>
-       <!--
-       <mat-form-field appearance="fill">
-        <mat-label>{{input.label}}</mat-label>
-        <mat-select [formControlName]="input.id">
-          <mat-option *ngFor="let sel of input.options" [value]="sel">
-            {{sel}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      -->
+       <app-select [input]="input" [form]="form"></app-select>      
       </div>
 
     </container-element>

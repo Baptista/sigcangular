@@ -1,6 +1,5 @@
 .divflex{
     display: flex;
-    margin: 5px;
 }
 
 @media screen and (max-width: 1020px) {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-searchconsult',
   templateUrl: './searchconsult.component.html',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchconsultComponent implements OnInit {
 
+  @Input() label: string; 
   constructor() { }
 
   ngOnInit(): void {

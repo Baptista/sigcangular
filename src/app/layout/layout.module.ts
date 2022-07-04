@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './header/navbar/navbar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import {RouterModule} from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { HeaderComponent } from './header/header/header.component'; 
+import { MainComponent } from './main/main.component'; 
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatCardModule} from '@angular/material/card'; 
-import { UserinfoComponent } from './header/userinfo/userinfo.component';
-import { HeaderConsultComponent } from './body/consult/header/headerconsult.component';
-import { SearchconsultComponent } from './body/consult/searchconsult/searchconsult.component';
+import { UserinfoComponent } from './userinfo/userinfo.component';
+import { HeaderConsultComponent } from './headerconsult/headerconsult.component';
+import { SearchconsultComponent } from './searchconsult/searchconsult.component';
 import {MatInputModule} from '@angular/material/input';
 import { TableComponent } from './materials/table/table.component'; 
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import { MatTableModule } from '@angular/material/table';
-import { SelectformComponent } from './body/selectform/selectform.component'  
+import { SwitchMaterialComponent } from './switchmaterial/switchmaterial.component'  
 import { ReactiveFormsModule } from '@angular/forms';
-import { GroupformComponent } from './body/groupform/groupform.component';
+import { SearchFormComponent } from './forms/searchform/searchform.component';
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
 import { MatRadioModule } from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -31,19 +31,19 @@ import { DatepickerComponent } from './materials/datepicker/datepicker.component
 import { SelectComponent } from './materials/select/select.component';
 import { DialogComponent } from './materials/dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { PanelformComponent } from './body/create/panelform/panelform.component';
-import { CreateformComponent } from './body/create/createform/createform.component';
+import { PanelformComponent } from './forms/panelform/panelform.component';
+import { CreateformComponent } from './forms/createform/createform.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    HeaderComponent,
+    MainComponent,
     UserinfoComponent,
     HeaderConsultComponent,
     SearchconsultComponent,
     TableComponent,
-    SelectformComponent,
-    GroupformComponent,
+    SwitchMaterialComponent,
+    SearchFormComponent,
     TextboxComponent,
     CheckboxComponent,
     DatepickerComponent,
@@ -75,11 +75,11 @@ import { CreateformComponent } from './body/create/createform/createform.compone
   ],
   exports:[
     NavbarComponent,
-    HeaderComponent,
+    MainComponent,
     UserinfoComponent,
     HeaderConsultComponent,
-    GroupformComponent,
-    SelectformComponent,
+    SearchFormComponent,
+    SwitchMaterialComponent,
     DialogComponent
   ],
   providers:[

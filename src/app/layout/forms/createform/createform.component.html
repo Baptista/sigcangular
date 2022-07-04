@@ -1,0 +1,16 @@
+<div>
+  <p>{{title}}</p>
+</div>
+<div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">      
+
+      <div *ngFor="let formField of panelFormField" class="form-group">
+      
+        <app-panelform [formFields]="formField.fields" [titlepanel]="formField.label" [form]="form" ></app-panelform>
+      </div>
+      <div class="divsubmit">
+        <button type="submit" class="mainbutton" [disabled]="form.invalid">Criar</button>
+      </div>
+    </form>  
+    
+  </div>

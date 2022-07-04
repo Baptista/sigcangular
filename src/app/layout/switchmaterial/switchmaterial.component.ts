@@ -2,11 +2,11 @@ import { Component, OnInit,Input } from '@angular/core';
 import { IFormField } from 'src/app/interface/IFormField';
 import { FormGroup } from '@angular/forms';
 @Component({
-  selector: 'app-selectform',
-  templateUrl: './selectform.component.html',
-  styleUrls: ['./selectform.component.css']
+  selector: 'app-switchmaterial',
+  templateUrl: './switchmaterial.component.html',
+  styleUrls: ['./switchmaterial.component.css']
 })
-export class SelectformComponent {
+export class SwitchMaterialComponent {
 
   @Input() input: IFormField;
   @Input() form: FormGroup;

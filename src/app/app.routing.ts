@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeaderComponent } from './layout/header/header/header.component';
+import { MainComponent } from './layout/main/main.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HeaderComponent,
+    component: MainComponent,
     children: [
       {
         path: '', pathMatch: 'full',
-        component: HeaderComponent
+        component: MainComponent
       }]
   }]
 
