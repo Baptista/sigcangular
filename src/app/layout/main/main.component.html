@@ -8,7 +8,8 @@
      </div>
      <span class="sidebyside"></span>
      <div >
-      <img  class="userImage" mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" (click)="Toggle()">
+      <img  class="userImage" mat-card-sm-image src="{{srcimage}}" (click)="Toggle()">
+      <app-userinfo *ngIf="toDisplay"></app-userinfo>
      </div>
     </mat-toolbar>
     <mat-sidenav-container class="sidebar-sidenav-container">
@@ -17,12 +18,13 @@
         </app-navbar>       
       </mat-sidenav>      
      <div style="margin: 20px">
-     
+     <!--
       <app-headerconsult></app-headerconsult> 
       
       <app-searchconsult label="Pesquisa"></app-searchconsult>   
-      <app-table></app-table>  
-        <!--<app-createform title="Create..."></app-createform>-->
+      <app-tableform></app-tableform>  -->
+        <app-createform title="Create..."></app-createform>
+        <app-tree></app-tree>
       </div>
     </mat-sidenav-container>
   </div>

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class SessionstorageserviceService {
+export class SessionstorageService {
 
   private session: Storage;
   private key: string = 'token';

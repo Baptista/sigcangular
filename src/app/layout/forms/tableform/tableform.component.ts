@@ -7,17 +7,19 @@ import {SelectionModel} from '@angular/cdk/collections';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']
+  selector: 'app-tableform',
+  templateUrl: './tableform.component.html',
+  styleUrls: ['./tableform.component.css']
 })
-export class TableComponent implements AfterViewInit {
+export class TableformComponent implements AfterViewInit {
+ 
+  ngOnInit(): void {
+  }
 
   @Input() withSelect :boolean = false;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['select','position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
-  
   tableForm: FormGroup = new FormGroup( {   
     select:new FormControl('')
   } );
@@ -54,17 +56,10 @@ export class TableComponent implements AfterViewInit {
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
   }
 
-  isUrl(value:string){
-    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-    return pattern.test(value);
+  onSubmit() {
+    
+    console.warn(this.selection.selected.length);
   }
-
-
 /*
   SortChange(sortState: Sort) {
     if(this.sort.direction){
@@ -105,4 +100,5 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
   {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
 ];
+
 

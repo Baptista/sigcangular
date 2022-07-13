@@ -33,6 +33,10 @@ import { DialogComponent } from './materials/dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PanelformComponent } from './forms/panelform/panelform.component';
 import { CreateformComponent } from './forms/createform/createform.component';
+import { MatSortModule } from '@angular/material/sort';
+import { TableformComponent } from './forms/tableform/tableform.component';
+import { TreeComponent } from './materials/tree/tree.component';
+import {MatTreeModule} from '@angular/material/tree'; 
 
 @NgModule({
   declarations: [
@@ -51,6 +55,8 @@ import { CreateformComponent } from './forms/createform/createform.component';
     DialogComponent,
     PanelformComponent,
     CreateformComponent,
+    TableformComponent,
+    TreeComponent,
   ],
   imports: [
     CommonModule,    
@@ -72,6 +78,8 @@ import { CreateformComponent } from './forms/createform/createform.component';
     MatSelectModule,
     MatFormFieldModule,
     MatDialogModule,
+    MatSortModule,
+    MatTreeModule
   ],
   exports:[
     NavbarComponent,

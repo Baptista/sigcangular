@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
 
   toDisplay = false;
+  srcimage = './assets/profile_empty.jpg'
   constructor() { }
 
   ngOnInit(): void {

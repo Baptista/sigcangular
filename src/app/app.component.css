@@ -22,4 +22,10 @@
 }
 
 ::ng-deep.mainbutton:hover {background-color: #3e8e41}
+::ng-deep.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: green !important;
+}
 
+::ng-deep.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background{
+background-color: green !important;
+}

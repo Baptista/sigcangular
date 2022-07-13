@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderConsultComponent implements OnInit {
 
   NResults : string = "";
+  
   constructor() { }
 
   ngOnInit(): void {
