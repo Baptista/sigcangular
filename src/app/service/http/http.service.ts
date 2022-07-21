@@ -1,22 +1,44 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {  Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import {  Observable, of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
+import { apiPath, environment } from 'src/environments/environment';
+import { HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
 
+  httpOptions = {
+    headers: new HttpHeaders({      
+      'Content-Type': 'application/json'
+    })
+  }
 
   constructor(private httpClient: HttpClient) { }
-
-  getAll(): Observable<any[]> {
-    return this.httpClient.get<any[]>(environment.apiURL)
-    .pipe(
-      catchError(this.errorHandler)
-    )
+  
+  
+  getAll(path: apiPath, queryParams: HttpParams) {  
+   this.httpClient.get(environment.apiURL+path,{responseType: 'text', params:queryParams})
+    .pipe(catchError(this.errorHandler))
+    .subscribe((data)=>{    
+      console.log(data);
+      return data;
+    }
+  );    
   }
+ 
+  postAll(path: apiPath, body:string){
+    return this.httpClient.post(environment.apiURL+path, body, this.httpOptions)
+    .pipe(catchError(this.errorHandler))
+    .subscribe((data)=>{    
+      console.log(data);
+      return data;
+    }
+  );
+  }
+ 
+
 
   errorHandler(error:any) {
     let errorMessage = '';
