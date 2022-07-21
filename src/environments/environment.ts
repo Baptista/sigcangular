@@ -4,11 +4,11 @@
 
 export const environment = {
   production: false,
-  apiURL: ''
+  apiURL: 'https://localhost:44341/SigcAdm'
 };
 
-export enum apiPaths{
-  workstation = '/workstations',
+export enum apiPath{
+  setting = '/SettingValues',
   equipment = '/equipments'
 };
 

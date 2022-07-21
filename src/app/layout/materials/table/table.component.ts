@@ -14,14 +14,11 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 export class TableComponent implements AfterViewInit {
 
   @Input() withSelect :boolean = false;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'action'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
   
-  tableForm: FormGroup = new FormGroup( {   
-    select:new FormControl('')
-  } );
-
+ 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
