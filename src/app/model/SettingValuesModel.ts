@@ -1,34 +1,35 @@
 export class SettingValuesModel{
 
-    SettingId:number;
-    SetName: string;
-    SetDescription: string;
-    SetStatus: boolean;
-    SetSystem: boolean;
-    SetUpdtDate: any;
-    SetUpdtUser: string;
-    SettingTypeId: number;
-    SettCode: string;
-    SettDescription: string;
-    BusinessUnitId: number;
-    BsuDescription: string;
-    SettingValueId: number;
-    EntityTypeId: number;
-    EntityId: number;
-    SetvBeginDate: any;
-    SetvEndDate: any;
-    SetvValue: string;
-    SetvNumberDaysFromBegin: number;
-    SetvNumberDaysToEnd: number;
-    SetvStatus: boolean;
-    SetvSystem: boolean;
-    SetvUpdtDate: any;
-    SetvUpdtUser: string;
-    ApplicationId: string;
-    AppName: string;
-    SetAllowUpdate: boolean;
-    SetAllowCreate: boolean;
-    SetIsEncrypted: boolean;
-    SetIsFraction:boolean;
+    settingId:number;
+    setName: string;
+    setDescription: string;
+    setStatus: boolean;
+    setSystem: boolean;
+    setUpdtDate: any;
+    setUpdtUser: string;
+    settingTypeId: number;
+    settCode: string;
+    settDescription: string;
+    businessUnitId: number;
+    bsuDescription: string;
+    settingValueId: number;
+    entityTypeId: number;
+    entityId: number;
+    setvBeginDate: any;
+    setvEndDate: any;
+    setvValue: string;
+    setvNumberDaysFromBegin: number;
+    setvNumberDaysToEnd: number;
+    setvStatus: boolean;
+    setvSystem: boolean;
+    setvUpdtDate: any;
+    setvUpdtUser: string;
+    applicationId: string;
+    appName: string;
+    setAllowUpdate: boolean;
+    setAllowCreate: boolean;
+    setIsEncrypted: boolean;
+    setIsFraction:boolean;
 
 }
+

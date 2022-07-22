@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {  Observable, of, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { apiPath, environment } from 'src/environments/environment';
 import { HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
 @Injectable({
@@ -27,18 +27,11 @@ export class HttpService {
     }
   );    
   }
- 
-  postAll(path: apiPath, body:string){
+  obsdata: Observable<any>;
+  post(path: apiPath, body:string){
     return this.httpClient.post(environment.apiURL+path, body, this.httpOptions)
-    .pipe(catchError(this.errorHandler))
-    .subscribe((data)=>{    
-      console.log(data);
-      return data;
-    }
-  );
+    .pipe(catchError(this.errorHandler));    
   }
- 
-
 
   errorHandler(error:any) {
     let errorMessage = '';

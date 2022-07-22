@@ -5,6 +5,7 @@
       </mat-panel-title>      
     </mat-expansion-panel-header>
 
-    <app-searchform></app-searchform>
+    <app-searchform [form]="form" [formFields]="formFields" (out)="onFind($event)">      
+    </app-searchform>
 
 </mat-expansion-panel>

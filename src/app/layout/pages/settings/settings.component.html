@@ -1,1 +1,3 @@
-<p>settings works!</p>
+<app-headerconsult [NResults] = "nResults"></app-headerconsult> 
+<app-searchconsult (out)="onFind($event)" [label]="label" [formFields]="formFields" [form]="form"></app-searchconsult>
+<app-table [displayedColumns] = "displayedColumns" [elements]="elements" ></app-table>

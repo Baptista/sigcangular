@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-headerconsult',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderConsultComponent implements OnInit {
 
-  NResults : string = "";
+  @Input() NResults : number = 0;
   
   constructor() { }
 
