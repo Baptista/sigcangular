@@ -12,13 +12,14 @@ export class SearchconsultComponent implements OnInit {
   @Input() formFields:Array<IFormField> ;
   @Input () form: FormGroup;
   @Output() out = new EventEmitter<any>();
-
+  panelOpenState: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
 
   }
   onFind(data:any){
+    this.panelOpenState = false;
     this.out.emit(data);
   }
 }

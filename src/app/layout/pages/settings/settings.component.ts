@@ -24,14 +24,14 @@ export class SettingsComponent implements OnInit {
   resultapi :any;
   resultapi2 :ReturnEntity;
   nResults:number;
-  displayedColumns: any[];
+  displayedColumns: {Name:string,Value:string}[];
   elements: any[] = [];
 
   constructor(public httpService:HttpService,public dialog: MatDialog) { }
  
 
   ngOnInit() {
-    this.displayedColumns = [{Name:"Tipo",Value:"settingTypeId"},
+    this.displayedColumns = [{Name:"Tipo",Value:"settDescription"},
                             {Name:"Aplicação",Value:"applicationId"},
                             {Name:"Nome",Value:"setName"},
                             {Name:"Valor",Value:"setvValue"},
@@ -85,11 +85,11 @@ export class SettingsComponent implements OnInit {
   onFind(data:any){
     console.log(data);
     this.request.BusinessUnitId = 999;
-    this.request.PaginationCount = 2;
-    this.request.PaginationPage = 2;
+    this.request.PaginationCount = 0;
+    this.request.PaginationPage = 0;
     this.resultapi = this.GetTableData(this.request);
     
   }
-
-
+  
+  
 }

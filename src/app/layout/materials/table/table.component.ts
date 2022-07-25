@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-import {MatSort, Sort} from '@angular/material/sort';
+import {MatSort, Sort, SortDirection} from '@angular/material/sort';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {SelectionModel} from '@angular/cdk/collections';
 
@@ -11,43 +11,53 @@ import {SelectionModel} from '@angular/cdk/collections';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements AfterViewInit,OnChanges  {
-
   
-  @Input() displayedColumns: any[];
+  @Input() displayedColumns: {Name:string,Value:string}[];
   @Input() elements: string[] = [];
   displayedColumnsName:any[];
-  displayedColumnsId:any[];
+  
   dataSource = new MatTableDataSource(this.elements);
   selection = new SelectionModel(true, []);
 
-
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(private _liveAnnouncer: LiveAnnouncer) {
+    
+  }
   ngOnChanges(changes: SimpleChanges): void {
     this.dataSource = new MatTableDataSource(this.elements);
     this.selection = new SelectionModel(true, []);
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    
   }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+  
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    //this.dataSource.paginator = this.paginator;
+    //this.dataSource.sort = this.sort;
     this.displayedColumnsName = this.displayedColumns.map((x)=>{return x.Name});
-    this.displayedColumnsId = this.displayedColumns.map((x)=>{return x.Value});
+    
   }
-
-  SortChange(sortState: Sort) {
+  
+  SortChange(sortState: Sort):void {    
+    
+    let aux:string = sortState.active;
+    let col:string = this.displayedColumns.find(x=>x.Name == sortState.active)?.Value ??"";
+    if(col != ""){
+      this.sort.active = col;
+    }
+    this.sort.direction = sortState.direction;
     this.dataSource.sort = this.sort;
-   
-    if(this.sort.direction){
-      
+    this.dataSource._updateChangeSubscription();
+    this.sort.active = aux;
+    /*
+    if(this.sort.direction){      
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     }else{
       this._liveAnnouncer.announce('Sorting cleared');
     }
+    */
   }
   
 }

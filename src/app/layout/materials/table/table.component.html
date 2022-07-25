@@ -1,6 +1,6 @@
 <div >
 
-    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="SortChange($event)"> <!--(matSortChange)="SortChange($event)"-->
+    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="SortChange($event) "> <!--(matSortChange)="SortChange($event)"-->
   
       <ng-container [matColumnDef]="column.Name" *ngFor="let column of displayedColumns">
                 
