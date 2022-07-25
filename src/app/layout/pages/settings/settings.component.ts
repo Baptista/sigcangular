@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
 import { IFormField } from 'src/app/interface/IFormField';
 import { ReturnEntity } from 'src/app/model/ReturnEntity';
 import { SettingValuesModel } from 'src/app/model/SettingValuesModel';
@@ -8,6 +9,8 @@ import { VwSettingValuesFilterRequest } from 'src/app/model/VwSettingValuesFilte
 import { HttpService } from 'src/app/service/http/http.service';
 import { apiPath } from 'src/environments/environment';
 import { DialogComponent } from '../../materials/dialog/dialog.component';
+import { TableComponent } from '../../materials/table/table.component';
+import { SearchconsultComponent } from '../../searchconsult/searchconsult.component';
 
 @Component({
   selector: 'app-settings',
@@ -67,7 +70,12 @@ export class SettingsComponent implements OnInit {
 
   }
 
+  @ViewChild(TableComponent) table: TableComponent;
+
   GetTableData(body:VwSettingValuesFilterRequest){
+    
+    body.PaginationPage = this.table.paginator.pageIndex;
+    body.PaginationCount = this.table.paginator.pageSize;
     return this.httpService.post(apiPath.setting,JSON.stringify(body)).subscribe(x=>{
       
       let data :ReturnEntity = x as ReturnEntity;
@@ -78,7 +86,7 @@ export class SettingsComponent implements OnInit {
       }else{
         this.nResults = data.returnValue.totalCount;
         this.elements = data.returnValue.elements;
-
+        
       }
     });     
   }

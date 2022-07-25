@@ -18,6 +18,10 @@ export class TableComponent implements AfterViewInit,OnChanges  {
   
   dataSource = new MatTableDataSource(this.elements);
   selection = new SelectionModel(true, []);
+  pagelength = 300;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
     
@@ -25,18 +29,18 @@ export class TableComponent implements AfterViewInit,OnChanges  {
   ngOnChanges(changes: SimpleChanges): void {
     this.dataSource = new MatTableDataSource(this.elements);
     this.selection = new SelectionModel(true, []);
-    this.dataSource.paginator = this.paginator;
     
   }
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+ 
 
   
   ngAfterViewInit() {
-    //this.dataSource.paginator = this.paginator;
+    //
     //this.dataSource.sort = this.sort;
-    this.displayedColumnsName = this.displayedColumns.map((x)=>{return x.Name});
+    this.displayedColumnsName = this.displayedColumns.map((x)=>{return x.Name});    
+    
+   
     
   }
   

@@ -32,4 +32,3 @@ export class SettingValuesModel{
     setIsFraction:boolean;
 
 }
-
