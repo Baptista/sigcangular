@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { IFormField } from 'src/app/interface/IFormField';
 import { ReturnEntity } from 'src/app/model/ReturnEntity';
 import { SettingValuesModel } from 'src/app/model/SettingValuesModel';
@@ -74,8 +74,7 @@ export class SettingsComponent implements OnInit {
 
   GetTableData(body:VwSettingValuesFilterRequest){
     
-    body.PaginationPage = this.table.paginator.pageIndex;
-    body.PaginationCount = this.table.paginator.pageSize;
+    
     return this.httpService.post(apiPath.setting,JSON.stringify(body)).subscribe(x=>{
       
       let data :ReturnEntity = x as ReturnEntity;
@@ -86,18 +85,22 @@ export class SettingsComponent implements OnInit {
       }else{
         this.nResults = data.returnValue.totalCount;
         this.elements = data.returnValue.elements;
-        
+        this.table.pagelength = data.returnValue.totalCount;
       }
     });     
   }
   onFind(data:any){
-    console.log(data);
-    this.request.BusinessUnitId = 999;
-    this.request.PaginationCount = 0;
-    this.request.PaginationPage = 0;
+    console.log(data);    
+    this.request.PaginationPage = 1;
+    this.request.PaginationCount = this.table.paginator.pageSize;    
     this.resultapi = this.GetTableData(this.request);
     
   }
-  
+  onPageEvent(event:PageEvent){
+    console.log(event);
+    this.request.PaginationPage = event.pageIndex+1;
+    this.request.PaginationCount = event.pageSize;
+    this.GetTableData(this.request);
+  }  
   
 }

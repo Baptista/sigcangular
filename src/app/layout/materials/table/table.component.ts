@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
+import {AfterViewInit, Component, Input, OnChanges, SimpleChanges, ViewChild,Output,EventEmitter} from '@angular/core';
+import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort, Sort, SortDirection} from '@angular/material/sort';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
@@ -14,11 +14,12 @@ export class TableComponent implements AfterViewInit,OnChanges  {
   
   @Input() displayedColumns: {Name:string,Value:string}[];
   @Input() elements: string[] = [];
-  displayedColumnsName:any[];
-  
+  @Output() out = new EventEmitter<any>();
+
+  displayedColumnsName:any[];  
   dataSource = new MatTableDataSource(this.elements);
   selection = new SelectionModel(true, []);
-  pagelength = 300;
+  pagelength :number;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -28,20 +29,17 @@ export class TableComponent implements AfterViewInit,OnChanges  {
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.dataSource = new MatTableDataSource(this.elements);
-    this.selection = new SelectionModel(true, []);
-    
+    this.selection = new SelectionModel(true, []);    
   }
-
- 
 
   
   ngAfterViewInit() {
-    //
-    //this.dataSource.sort = this.sort;
-    this.displayedColumnsName = this.displayedColumns.map((x)=>{return x.Name});    
-    
-   
-    
+    this.displayedColumnsName = this.displayedColumns.map((x)=>{return x.Name});  
+  }
+  onPageEvent(event: PageEvent) {
+    console.log(event);
+    console.log(this.paginator);
+    this.out.emit(event);
   }
   
   SortChange(sortState: Sort):void {    
