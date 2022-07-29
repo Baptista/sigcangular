@@ -15,8 +15,8 @@ export class SettingValuesModel{
     settingValueId: number;
     entityTypeId: number;
     entityId: number;
-    setvBeginDate: any;
-    setvEndDate: any;
+    setvBeginDate: Date;
+    setvEndDate: Date;
     setvValue: string;
     setvNumberDaysFromBegin: number;
     setvNumberDaysToEnd: number;

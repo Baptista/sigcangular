@@ -4,6 +4,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSort, Sort, SortDirection} from '@angular/material/sort';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {SelectionModel} from '@angular/cdk/collections';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-table',
@@ -36,6 +37,24 @@ export class TableComponent implements AfterViewInit,OnChanges  {
   ngAfterViewInit() {
     this.displayedColumnsName = this.displayedColumns.map((x)=>{return x.Name});  
   }
+
+  isValidDate(value:any){
+    if(isNaN(value) && !isNaN(Date.parse(value)))
+        return true;
+    else return false;
+  }
+
+  ShowData(value:any){
+    if(value == "0001-01-01T00:00:00") return "N/D";
+    if(this.isValidDate(value)){
+      return new Date(value).toLocaleDateString();
+    }
+    else{
+      return value;
+    }
+    
+  }
+
   onPageEvent(event: PageEvent) {
     console.log(event);
     console.log(this.paginator);

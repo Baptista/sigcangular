@@ -2,7 +2,7 @@
     display: flex;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (orientation:portrait) {
     .divflex{  display:inline-block;
                vertical-align:middle;
             }

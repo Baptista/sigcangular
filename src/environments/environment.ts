@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://localhost:44341/SigcAdm'
+  apiURL: 'https://localhost:44311/SigcAdm'
 };
 
 export enum apiPath{

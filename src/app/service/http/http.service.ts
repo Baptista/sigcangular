@@ -11,7 +11,10 @@ export class HttpService {
 
   httpOptions = {
     headers: new HttpHeaders({      
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE, OPTIONS',
+      
     })
   }
 
@@ -27,7 +30,7 @@ export class HttpService {
     }
   );    
   }
-  obsdata: Observable<any>;
+  
   post(path: apiPath, body:string){
     return this.httpClient.post(environment.apiURL+path, body, this.httpOptions)
     .pipe(catchError(this.errorHandler));    
